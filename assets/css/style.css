@@ -363,6 +363,14 @@ td .tag, .tag {
 .signal { border: 1px solid var(--ink); background: var(--paper-light); padding: 1.3rem; display: grid; gap: 1rem; }
 .signal img { width: 100%; background: #fff; border: 1px solid var(--rule); padding: .6rem; }
 
+/* ---------- glossary ------------------------------------------------------ */
+.gloss { margin: 0; border-top: 1px solid var(--ink); max-width: 62rem; }
+.gloss > div { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: .2rem 2rem; padding: .8rem 0 .85rem; border-bottom: 1px solid var(--rule-faint); scroll-margin-top: 1rem; }
+.gloss dt { font-family: var(--font-head); font-style: italic; font-size: 1.22rem; line-height: 1.25; }
+.gloss dd { margin: 0; line-height: 1.58; max-width: 66ch; }
+.gloss > div:target { background: var(--paper-light); box-shadow: -8px 0 0 var(--paper-light), 8px 0 0 var(--paper-light); }
+@media (max-width: 640px) { .gloss > div { grid-template-columns: minmax(0, 1fr); } }
+
 /* ---------- donate call --------------------------------------------------- */
 .appeal { border: 1px solid var(--ink); outline: 1px solid var(--ink); outline-offset: 4px; background: var(--paper-light); padding: clamp(1.4rem, 4vw, 2.6rem); display: grid; gap: 1.1rem; margin: 6px; }
 .appeal h2 { font-size: var(--step-3); }
