@@ -190,6 +190,7 @@
   });
 
   window.NelsonBattle.mount('plan', {
+    key: 'trafalgar',
     title: 'The Battle of Trafalgar',
     size: [1100, 880], duration: 95, shipScale: .8,
     rose: [92, 96], north: 0,

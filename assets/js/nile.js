@@ -122,6 +122,7 @@
   })();
 
   window.NelsonBattle.mount('plan', {
+    key: 'nile',
     title: 'The Battle of the Nile',
     size: [1100, 780], duration: 95, shipScale: .92,
     rose: [1006, 98], north: 0,

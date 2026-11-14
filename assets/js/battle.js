@@ -13,6 +13,19 @@
   var SAMPLES = 400;
   var SLOW = 0.7;   /* below this speed (map units per time unit) a ship is drifting, not sailing */
 
+  /* Every word the engine shows. A page may set window.NelsonBattleUI to
+     override any of them (the French pages do). */
+  var UI_EN = {
+    play: 'Play', pause: 'Pause', replay: 'Replay', restart: 'Restart', speed: 'Speed ', names: ' Ship names', wakes: ' Wakes',
+    struck: 'Struck her colours', flagship: 'Flagship', aground: 'Aground', hint: 'Click a ship for her name, guns and captain.',
+    ship: 'Ship', pick: 'Click any ship on the plan to see her name, guns, captain and fate.', flagTag: 'flagship', guns: ' guns',
+    flagOf: 'Flag of ', scrub: 'Position in the battle', aria: ': animated plan of the fleets seen from above',
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    swap: []
+  };
+  function T(k) { var u = window.NelsonBattleUI; return (u && u[k] !== undefined) ? u[k] : UI_EN[k]; }
+  function swap(str) { T('swap').forEach(function (p) { str = str.split(p[0]).join(p[1]); }); return str; }
+
   function S(name, attrs, parent) {
     var n = document.createElementNS(NS, name), k;
     if (attrs) for (k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) n.setAttribute(k, attrs[k]);
@@ -101,6 +114,10 @@
 
   /* ---- clock ------------------------------------------------------------- */
   function clockAt(sc, t) {
+    if (sc.calendar) {
+      var d = new Date(lerp(sc.calendar[0], sc.calendar[1], clamp(t, 0, 100) / 100));
+      return d.getUTCDate() + ' ' + T('months')[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
+    }
     var c = sc.clock, i, m = c[c.length - 1][1];
     if (t <= c[0][0]) m = c[0][1];
     else for (i = 1; i < c.length; i++) {
@@ -139,11 +156,11 @@
 
     var main = H('div', 'bm-main', root);
     var stage = H('div', 'bm-stage', main);
-    var svg = S('svg', { viewBox: '0 0 ' + W + ' ' + Hh, role: 'img', 'aria-label': sc.title + ': animated plan of the fleets seen from above' }, stage);
+    var svg = S('svg', { viewBox: '0 0 ' + W + ' ' + Hh, role: 'img', 'aria-label': sc.title + T('aria') }, stage);
     this.svg = svg;
 
     var defs = S('defs', null, svg);
-    var pat = S('pattern', { id: 'bm-stipple', width: 7, height: 7, patternUnits: 'userSpaceOnUse' }, defs);
+    var pat = S('pattern', { id: 'bm-stipple-' + root.id, width: 7, height: 7, patternUnits: 'userSpaceOnUse' }, defs);
     S('circle', { cx: 1.5, cy: 1.5, r: .7, fill: 'var(--ink)', 'fill-opacity': .35 }, pat);
     S('circle', { cx: 5, cy: 5, r: .7, fill: 'var(--ink)', 'fill-opacity': .35 }, pat);
     var clip = S('clipPath', { id: 'bm-clip-' + root.id }, defs);
@@ -169,7 +186,7 @@
 
     /* shoals, land, towns, forts, labels */
     g = S('g', null, svg);
-    (sc.shoals || []).forEach(function (d) { S('path', { 'class': 'bm-shoal', d: d }, g); });
+    (sc.shoals || []).forEach(function (d) { S('path', { 'class': 'bm-shoal', d: d, fill: 'url(#bm-stipple-' + root.id + ')' }, g); });
     (sc.land || []).forEach(function (d) { S('path', { 'class': 'bm-land-wash', d: d }, g); });
     (sc.land || []).forEach(function (d) { S('path', { 'class': 'bm-land', d: d }, g); });
     (sc.towns || []).forEach(function (d) { S('path', { 'class': 'bm-town', d: d }, g); });
@@ -205,16 +222,16 @@
 
     /* controls */
     var ctl = H('div', 'bm-controls', main);
-    this.playBtn = H('button', 'bm-play', ctl, 'Play'); this.playBtn.type = 'button';
-    var rs = H('button', 'bm-restart', ctl, 'Restart'); rs.type = 'button';
+    this.playBtn = H('button', 'bm-play', ctl, T('play')); this.playBtn.type = 'button';
+    var rs = H('button', 'bm-restart', ctl, T('restart')); rs.type = 'button';
     this.scrub = H('input', 'bm-scrub', ctl);
     this.scrub.type = 'range'; this.scrub.min = 0; this.scrub.max = 1000; this.scrub.value = 0; this.scrub.step = 1;
-    this.scrub.id = root.id + '-scrub'; this.scrub.setAttribute('aria-label', 'Position in the battle');
-    var lab = H('label', null, ctl); lab.appendChild(document.createTextNode('Speed '));
+    this.scrub.id = root.id + '-scrub'; this.scrub.setAttribute('aria-label', T('scrub'));
+    var lab = H('label', null, ctl); lab.appendChild(document.createTextNode(T('speed')));
     var sel = H('select', null, lab); sel.id = root.id + '-speed';
     [['0.5', '½×'], ['1', '1×'], ['2', '2×'], ['4', '4×']].forEach(function (o) { var op = H('option', null, sel, o[1]); op.value = o[0]; if (o[0] === '1') op.selected = true; });
-    lab = H('label', null, ctl); var cbN = H('input', null, lab); cbN.type = 'checkbox'; cbN.id = root.id + '-names'; lab.appendChild(document.createTextNode(' Ship names'));
-    lab = H('label', null, ctl); var cbW = H('input', null, lab); cbW.type = 'checkbox'; cbW.checked = true; cbW.id = root.id + '-wakes'; lab.appendChild(document.createTextNode(' Wakes'));
+    lab = H('label', null, ctl); var cbN = H('input', null, lab); cbN.type = 'checkbox'; cbN.id = root.id + '-names'; lab.appendChild(document.createTextNode(T('names')));
+    lab = H('label', null, ctl); var cbW = H('input', null, lab); cbW.type = 'checkbox'; cbW.checked = true; cbW.id = root.id + '-wakes'; lab.appendChild(document.createTextNode(T('wakes')));
 
     this.playBtn.addEventListener('click', function () { self.playing ? self.pause() : self.play(); });
     rs.addEventListener('click', function () { self.seek(0); self.play(); });
@@ -250,12 +267,12 @@
       li.appendChild(document.createTextNode(sc.sides[k]));
     });
     var extra = [
-      ['<path d="M25,6 C21,2.2 9,1.6 2,2.6 L2,9.4 C9,10.4 21,9.8 25,6 Z" fill="var(--paper-light)" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="2 1.6"/>', 'Struck her colours'],
-      ['<path d="M25,6 C21,2.2 9,1.6 2,2.6 L2,9.4 C9,10.4 21,9.8 25,6 Z" fill="var(--ink-soft)" stroke="var(--gilt-bright)" stroke-width="1.8"/>', 'Flagship'],
-      ['<circle cx="13" cy="6" r="5.4" fill="none" stroke="var(--ink)" stroke-dasharray="1.5 2.5"/>', 'Aground']
+      ['<path d="M25,6 C21,2.2 9,1.6 2,2.6 L2,9.4 C9,10.4 21,9.8 25,6 Z" fill="var(--paper-light)" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="2 1.6"/>', T('struck')],
+      ['<path d="M25,6 C21,2.2 9,1.6 2,2.6 L2,9.4 C9,10.4 21,9.8 25,6 Z" fill="var(--ink-soft)" stroke="var(--gilt-bright)" stroke-width="1.8"/>', T('flagship')],
+      ['<circle cx="13" cy="6" r="5.4" fill="none" stroke="var(--ink)" stroke-dasharray="1.5 2.5"/>', T('aground')]
     ];
     extra.forEach(function (e) { var li = H('li', null, leg); li.innerHTML = '<svg viewBox="0 0 26 12">' + e[0] + '</svg>'; li.appendChild(document.createTextNode(e[1])); });
-    H('li', null, leg, 'Click a ship for her name, guns and captain.');
+    H('li', null, leg, T('hint'));
   };
 
   BattleMap.prototype.drawRose = function (svg, cx, cy, north) {
@@ -465,14 +482,14 @@
     var info = this.info, d;
     info.innerHTML = '';
     if (!ship) {
-      H('div', 'bi-k', info, 'Ship');
-      H('div', 'bi-meta', info, 'Click any ship on the plan to see her name, guns, captain and fate.');
+      H('div', 'bi-k', info, T('ship'));
+      H('div', 'bi-meta', info, T('pick'));
     } else {
       d = ship.d;
-      H('div', 'bi-k', info, this.sc.sides[d.side] + (d.flag ? '  ·  flagship' : ''));
+      H('div', 'bi-k', info, this.sc.sides[d.side] + (d.flag ? '  ·  ' + T('flagTag') : ''));
       H('div', 'bi-name', info, d.name);
-      H('div', 'bi-meta', info, (d.guns ? d.guns + ' guns' : '') + (d.captain ? (d.guns ? '  ·  ' : '') + d.captain : ''));
-      if (d.flag) H('div', 'bi-meta', info, 'Flag of ' + d.flag);
+      H('div', 'bi-meta', info, (d.guns ? d.guns + T('guns') : '') + (d.captain ? (d.guns ? '  ·  ' : '') + swap(d.captain) : ''));
+      if (d.flag) H('div', 'bi-meta', info, T('flagOf') + swap(d.flag));
       if (d.fate) H('div', 'bi-meta', info, d.fate);
     }
     if (this.svg) this.render();
@@ -488,7 +505,7 @@
     var self = this;
     if (this.t >= 100) this.t = 0;
     this.playing = true; this._last = null;
-    this.playBtn.textContent = 'Pause';
+    this.playBtn.textContent = T('pause');
     function step(now) {
       if (!self.playing) return;
       if (self._last !== null) {
@@ -505,14 +522,34 @@
   BattleMap.prototype.pause = function () {
     this.playing = false;
     if (this._raf) cancelAnimationFrame(this._raf);
-    this.playBtn.textContent = this.t >= 100 ? 'Replay' : 'Play';
+    this.playBtn.textContent = this.t >= 100 ? T('replay') : T('play');
   };
+
+  /* A page in another language sets window.NelsonBattleLocale[scenario.key]
+     with translated captions; ships are matched by id. */
+  function applyLocale(sc, loc) {
+    if (loc.title) sc.title = loc.title;
+    if (loc.days) sc.days = loc.days;
+    if (loc.sides) sc.sides = loc.sides;
+    if (loc.wind && sc.wind) sc.wind.label = loc.wind;
+    if (loc.scale && sc.scale) sc.scale.label = loc.scale;
+    (loc.labels || []).forEach(function (txt, i) { if (txt && sc.labels && sc.labels[i]) sc.labels[i].text = txt; });
+    (loc.phases || []).forEach(function (p, i) { if (sc.phases[i]) { sc.phases[i].title = p[0]; sc.phases[i].text = p[1]; } });
+    if (loc.ships) sc.ships.forEach(function (sh) {
+      var o = loc.ships[sh.id];
+      if (!o) return;
+      if (o.name) sh.name = o.name;
+      if (o.fate) sh.fate = o.fate;
+    });
+  }
 
   window.NelsonBattle = {
     maps: {},
     mount: function (id, scenario) {
       var root = document.getElementById(id);
       if (!root) return null;
+      var loc = window.NelsonBattleLocale && window.NelsonBattleLocale[scenario.key];
+      if (loc) applyLocale(scenario, loc);
       var m = new BattleMap(root, scenario);
       this.maps[id] = m;
       return m;

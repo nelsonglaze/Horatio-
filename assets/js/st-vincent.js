@@ -99,6 +99,7 @@
     { leave: 56, key: true, label: [16, -8, 'start'] });
 
   window.NelsonBattle.mount('plan', {
+    key: 'stvincent',
     title: 'The Battle of Cape St Vincent',
     size: [1100, 760], duration: 90, shipScale: .92,
     rose: [96, 650], north: 0,

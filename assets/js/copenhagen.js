@@ -109,6 +109,7 @@
   });
 
   window.NelsonBattle.mount('plan', {
+    key: 'copenhagen',
     title: 'The Battle of Copenhagen',
     size: [1100, 700], duration: 90, shipScale: 1,
     rose: [990, 626], north: 90,
