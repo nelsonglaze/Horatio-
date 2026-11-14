@@ -371,6 +371,37 @@ td .tag, .tag {
 .gloss > div:target { background: var(--paper-light); box-shadow: -8px 0 0 var(--paper-light), 8px 0 0 var(--paper-light); }
 @media (max-width: 640px) { .gloss > div { grid-template-columns: minmax(0, 1fr); } }
 
+/* ---------- HMS Victory, deck by deck ------------------------------------ */
+.decks { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; border: 1px solid var(--ink); outline: 1px solid var(--ink); outline-offset: 4px; background: var(--paper-light); margin: 6px; }
+.decks-draw { min-width: 0; overflow-x: auto; border-right: 1px solid var(--ink); }
+.decks-draw svg { display: block; width: 100%; min-width: 640px; height: auto; }
+.decks-panel { padding: 1.1rem 1.2rem 1.3rem; display: grid; gap: 1.2rem; align-content: start; font-size: .95rem; line-height: 1.55; }
+.decks-panel h3 { font-size: 1.5rem; font-style: italic; }
+.decks-panel .dk-sub { font-family: var(--font-display); font-size: .84rem; letter-spacing: .1em; color: var(--gilt); margin: .15rem 0 .5rem; }
+.decks:not(.js) .decks-panel article + article { border-top: 1px solid var(--rule); padding-top: 1rem; }
+@media (max-width: 900px) { .decks { grid-template-columns: minmax(0, 1fr); } .decks-draw { border-right: 0; border-bottom: 1px solid var(--ink); } }
+.dk-sea { fill: var(--sea); }
+.dk-wave { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 6 4; fill: none; opacity: .5; }
+.dk-hull { fill: var(--paper); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.dk-spar { fill: var(--paper-dark); stroke: var(--ink); stroke-width: 1.2; stroke-linejoin: round; }
+.dk-floor { stroke: var(--ink); stroke-width: 1.6; }
+.dk-wall { stroke: var(--ink); stroke-width: 1; opacity: .6; }
+.dk-band { fill: transparent; transition: fill .15s ease; }
+.dk-band.on { fill: var(--gilt-bright); fill-opacity: .4; }
+.dk-hit { fill: transparent; cursor: pointer; outline: none; }
+.dk-hit:hover { fill: var(--gilt-bright); fill-opacity: .16; }
+.dk-hit:focus-visible { stroke: var(--wax); stroke-width: 3; }
+.port { fill: var(--ink); fill-opacity: .72; }
+.dk-window { fill: var(--sea-deep); stroke: var(--ink); stroke-width: 1; }
+.dk-fell { fill: var(--wax); stroke: var(--paper-light); stroke-width: 1.2; }
+.dk-wheel { fill: none; stroke: var(--ink); stroke-width: 1.6; }
+.dk-stove { fill: var(--ink-soft); }
+.dk-label text { font-family: var(--font-head); font-style: italic; font-size: 17px; fill: var(--ink); }
+.dk-label .dk-small { font-size: 13px; fill-opacity: .78; }
+.dk-scale { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.dk-stay { stroke: var(--ink); stroke-width: 1; opacity: .42; fill: none; }
+.dk-flag { fill: var(--paper-light); stroke: var(--ink); stroke-width: 1; }
+
 /* ---------- donate call --------------------------------------------------- */
 .appeal { border: 1px solid var(--ink); outline: 1px solid var(--ink); outline-offset: 4px; background: var(--paper-light); padding: clamp(1.4rem, 4vw, 2.6rem); display: grid; gap: 1.1rem; margin: 6px; }
 .appeal h2 { font-size: var(--step-3); }
