@@ -106,11 +106,29 @@ p { margin: 0; }
 
 /* ---------- page furniture ------------------------------------------------ */
 .wrap { max-width: var(--sheet); margin: 0 auto; padding-inline: var(--gutter); }
-main { padding-block: 0 4.5rem; }
+main { padding-block: 0 5rem; overflow-x: clip; }
 .band { padding-block: 3.2rem; }
-.band + .band { border-top: 1px solid var(--rule-faint); }
+.band + .band { position: relative; border-top: 1px solid var(--rule); }
+.band + .band::before {
+  content: ""; position: absolute; top: -6px; left: 50%; width: 10px; height: 10px; transform: translateX(-50%) rotate(45deg);
+  background: var(--paper); border: 1px solid var(--ink); box-shadow: 0 0 0 4px var(--paper);
+}
 
-.page-head { padding-block: 3rem 2.2rem; display: grid; gap: 1rem; }
+.page-head {
+  position: relative; display: grid; gap: .9rem; max-width: 52rem; margin-block: 2.4rem 2.6rem;
+  border: 30px solid transparent; border-image: url("../img/orn-frame.svg") 50 / 30px stretch;
+  padding: .7rem 1.4rem 1.3rem; background: rgba(244, 235, 211, .55); background-clip: padding-box;
+}
+/* a ship, serpent or whale in the open water beside the cartouche */
+.page-head::after {
+  content: ""; position: absolute; left: calc(100% + 30px + 2rem); top: 50%; transform: translateY(-50%);
+  width: 16rem; aspect-ratio: 32 / 25; background: center / contain no-repeat; opacity: .62; pointer-events: none; display: none;
+}
+.page-head.orn-ship::after { background-image: url("../img/orn-ship.svg"); }
+.page-head.orn-serpent::after { background-image: url("../img/orn-serpent.svg"); aspect-ratio: 400 / 160; width: 17rem; }
+.page-head.orn-whale::after { background-image: url("../img/orn-whale.svg"); aspect-ratio: 300 / 145; width: 15.5rem; }
+@media (min-width: 1200px) { .page-head::after { display: block; } }
+@media (max-width: 640px) { .page-head { border-width: 20px; border-image-width: 20px; padding: .4rem .7rem .9rem; margin-block: 1.4rem 1.8rem; } }
 .kicker {
   font-family: var(--font-display); letter-spacing: .14em; font-size: .92rem; color: var(--gilt);
   display: flex; align-items: center; gap: .8rem;
@@ -177,6 +195,11 @@ figure { margin: 0; }
   content: ""; position: absolute; inset: -20% -10% -20% 35%;
   background: url("../img/rhumb.svg") center / contain no-repeat; opacity: .5; pointer-events: none;
 }
+.hero::after {
+  content: ""; position: absolute; left: 39%; bottom: .7rem; width: 15rem; aspect-ratio: 400 / 160; background: url("../img/orn-serpent.svg") center / contain no-repeat;
+  opacity: .55; pointer-events: none; display: none;
+}
+@media (min-width: 1100px) { .hero::after { display: block; } }
 .hero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 2rem 3.5rem; align-items: center; padding-block: 3.4rem 3.6rem; }
 .hero h1 { font-family: var(--font-display); font-size: var(--step-5); line-height: .9; letter-spacing: .02em; }
 .hero h1 span { display: block; }
@@ -372,7 +395,7 @@ td .tag, .tag {
 @media (max-width: 640px) { .gloss > div { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- HMS Victory, deck by deck ------------------------------------ */
-.decks { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; border: 1px solid var(--ink); outline: 1px solid var(--ink); outline-offset: 4px; background: var(--paper-light); margin: 6px; }
+.decks { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; border: 1px solid var(--ink); background: var(--paper-light); }
 .decks-draw { min-width: 0; overflow-x: auto; border-right: 1px solid var(--ink); }
 .decks-draw svg { display: block; width: 100%; min-width: 640px; height: auto; }
 .decks-panel { padding: 1.1rem 1.2rem 1.3rem; display: grid; gap: 1.2rem; align-content: start; font-size: .95rem; line-height: 1.55; }
@@ -410,7 +433,7 @@ td .tag, .tag {
 .appeal small { color: var(--ink-soft); font-size: .86rem; line-height: 1.5; max-width: 70ch; }
 
 /* ---------- battle plan (animated map) ------------------------------------ */
-.bm { display: grid; grid-template-columns: minmax(0, 1fr) 19.5rem; gap: 0; border: 1px solid var(--ink); outline: 1px solid var(--ink); outline-offset: 4px; background: var(--paper-light); margin: 6px; }
+.bm { display: grid; grid-template-columns: minmax(0, 1fr) 19.5rem; gap: 0; border: 1px solid var(--ink); background: var(--paper-light); }
 .bm-main { min-width: 0; display: grid; grid-template-rows: auto auto; border-right: 1px solid var(--ink); }
 .bm-stage { background: var(--sea); position: relative; line-height: 0; }
 .bm-stage svg { width: 100%; height: auto; display: block; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
@@ -451,6 +474,17 @@ td .tag, .tag {
   .bm-side { height: auto; min-height: 0; }
   .bm-caption { min-height: 0; }
   .bm-phases { max-height: 12rem; }
+}
+
+/* a chart's graduated border: alternate dark and light bars between two rules */
+.bm, .decks { position: relative; margin: 13px; }
+.bm::before, .decks::before {
+  content: ""; position: absolute; inset: -12px; pointer-events: none; border: 1px solid var(--ink);
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 30px, transparent 30px 60px) 0 3px / 100% 5px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 30px, var(--ink) 30px 60px) 0 calc(100% - 3px) / 100% 5px no-repeat,
+    repeating-linear-gradient(0deg, var(--ink) 0 30px, transparent 30px 60px) 3px 0 / 5px 100% no-repeat,
+    repeating-linear-gradient(0deg, transparent 0 30px, var(--ink) 30px 60px) calc(100% - 3px) 0 / 5px 100% no-repeat;
 }
 
 /* SVG parts of the plan */
@@ -500,7 +534,11 @@ td .tag, .tag {
 .bm-burst { pointer-events: none; }
 
 /* ---------- footer -------------------------------------------------------- */
-.foot { border-top: 1px solid var(--rule); margin-top: 1rem; }
+.foot { position: relative; border-top: 1px solid var(--rule); margin-top: 1rem; }
+.foot::before {
+  content: ""; position: absolute; top: -4.1rem; right: max(1.2rem, calc((100% - var(--sheet)) / 2 + 1.2rem)); width: 8.5rem; aspect-ratio: 300 / 145;
+  background: url("../img/orn-whale.svg") center / contain no-repeat; opacity: .6; pointer-events: none;
+}
 .foot-in { max-width: var(--sheet); margin: 0 auto; padding: 2.2rem var(--gutter) 2rem; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1.6rem 3rem; font-size: .92rem; color: var(--ink-soft); }
 .foot h2 { font-family: var(--font-display); font-size: .95rem; letter-spacing: .12em; color: var(--ink); margin-bottom: .5rem; }
 .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; }
