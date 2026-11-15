@@ -25,7 +25,7 @@
     ['Santísima Trinidad', 'spanish', 136, 'Capt. Francisco de Uriarte', 'Rear-Adm. Cisneros', 28, 'struck', 59, 'The largest warship afloat. Dismasted and taken; scuttled in the storm.'],
     ['Bucentaure', 'french', 80, 'Capt. Jean-Jacques Magendie', 'Vice-Adm. Villeneuve', 28, 'struck', 46, 'Raked by Victory; Villeneuve surrendered to Conqueror. Wrecked in the storm.'],
     ['Neptune', 'french', 80, 'Capt. Esprit-Tranquille Maistral', null, 28, 'cadiz', 40, 'Reached Cádiz.'],
-    ['Redoutable', 'french', 74, 'Capt. Jean Lucas', null, 28, 'struck', 45, 'The shot that killed Nelson came from her mizzen-top. Struck with 487 of her 643 men killed; sank next day.'],
+    ['Redoutable', 'french', 74, 'Capt. Jean Lucas', null, 28, 'struck', 45, 'The shot that killed Nelson came from her mizzen-top. Struck with 300 of her 643 men killed and 222 wounded; sank next day.'],
     ['San Leandro', 'spanish', 64, 'Capt. José Quevedo', null, 22, 'cadiz', 44, 'Reached Cádiz.'],
     ['San Justo', 'spanish', 74, 'Capt. Miguel Gastón', null, 22, 'cadiz', 46, 'Reached Cádiz.'],
     ['Indomptable', 'french', 80, 'Capt. Jean Hubert', null, 22, 'cadiz', 48, 'Reached Cádiz; wrecked in the storm with heavy loss of life.'],

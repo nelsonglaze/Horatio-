@@ -20,7 +20,7 @@
     ['Kronborg', 'frigate hulk', 22, 'Lt J. E. Hauch (killed)', { struck: 58 }, null, 'Taken and burnt.'],
     ['Hajen', 'floating battery', 18, 'Sub-Lt J. N. Müller', { struck: 62 }, null, 'Taken and burnt.'],
     ['Elven', 'sloop', 10, 'Lt-Cmdr H. Holsten', { cease: 48 }, [[48, dx(8), DY, 90], [51, 512, 249], [64, 822, 222], [70, 806, 128, 0]], 'Signal ship; withdrew damaged into the harbour.'],
-    ['Dannebrog', 'blockship', 60, 'Capt. F. A. Braun', { burn: [38, 97], struck: 68, explode: 97 }, [[72, dx(9), DY, 90], [86, 668, 286, 110], [97, 706, 292, 110]], 'Fischer’s flagship. On fire within the first hour; drifted blazing down the line and blew up about 4.30 pm.'],
+    ['Dannebrog', 'blockship', 64, 'Capt. F. A. Braun', { burn: [38, 97], struck: 68, explode: 97 }, [[72, dx(9), DY, 90], [86, 668, 286, 110], [97, 706, 292, 110]], 'Fischer’s flagship. On fire within the first hour; drifted blazing down the line and blew up about 4.30 pm.'],
     ['Aggershus', 'pram', 20, 'Lt T. Fasting', { cease: 58, sink: 71 }, [[58, dx(10), DY, 90], [61, 582, 249], [70, 760, 236, 90]], 'Towed out of the line sinking; went down on the flats.'],
     ['Flådebatteri No. 1', 'floating battery', 20, 'Sub-Lt Peter Willemoes', { cease: 57 }, [[56, dx(11), DY, 90], [60, 620, 248], [74, 862, 210, 60]], 'A raft of 24-pounders commanded by a 17-year-old, moored opposite Elephant. Nelson asked to meet him afterwards. Cut loose and got clear.'],
     ['Sjælland', 'ship of the line', 74, 'Capt. F. C. L. Harboe', { dismast: 56, struck: 62 }, [[64, dx(12), DY, 90], [78, 808, 266, 80]], 'The strongest ship in the line. Drifted under Trekroner after striking; taken next day and burnt.'],
@@ -28,7 +28,7 @@
     ['Søhesten', 'floating battery', 18, 'Lt B. U. Middelboe', { struck: 64 }, null, 'Taken and burnt.'],
     ['Holsteen', 'ship of the line', 60, 'Capt. J. Arenfelt', { struck: 66 }, null, 'The only prize kept. Sailed to England as a hospital ship and became HMS Holstein.'],
     ['Indfødsretten', 'blockship', 64, 'Capt. A. de Thurah (killed)', { struck: 68 }, null, 'Taken and burnt.'],
-    ['Hjælperen', 'frigate', 22, 'Lt P. C. Lillienskiold', { cease: 54 }, [[54, dx(17), DY, 90], [57, 826, 250], [66, 834, 150, 0]], 'Northernmost of the line; slipped away into the harbour.']
+    ['Hjælperen', 'frigate', 16, 'Lt P. C. Lillienskiold', { cease: 54 }, [[54, dx(17), DY, 90], [57, 826, 250], [66, 834, 150, 0]], 'Northernmost of the line; slipped away into the harbour.']
   ];
   D.forEach(function (d, i) {
     ships.push({
