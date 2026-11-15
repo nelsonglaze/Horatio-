@@ -1,0 +1,216 @@
+/* Texte français des plans animés, suite : le sort de chaque navire, par identifiant. */
+(function () {
+  'use strict';
+  var L = window.NelsonBattleLocale;
+  function f(t) { return { fate: t }; }
+  var CADIX = 'Rallie Cadix.', ORTEGAL = 'S’échappe ; pris au large du cap Ortegal le 4 novembre.';
+
+  L.trafalgar.ships = {
+    a0: f('Vient au secours du centre ; amène devant le Minotaur et le Spartiate vers 17 h 10. Repris dans la tempête, puis naufragé.'),
+    a1: f('S’échappe avec Dumanoir ; pris au large du cap Ortegal le 4 novembre.'),
+    a2: f('Revient seul dans la mêlée ; amène devant l’Orion vers 17 heures.'),
+    a3: f(ORTEGAL),
+    a4: f('S’échappe ; pris au large du cap Ortegal le 4 novembre. Sert dans la Royal Navy sous le nom de HMS Implacable jusqu’en 1949.'),
+    a5: f(ORTEGAL),
+    a6: f('Rallie Cadix ; naufragé après une sortie dans la tempête.'),
+    a7: f('Rallie Cadix ; naufragé dans la tempête.'),
+    a8: f('Abordé et pris par le Leviathan ; brûlé après la tempête.'),
+    a9: f(CADIX),
+    a10: f('Le plus grand navire de guerre du monde. Démâté et pris ; sabordé dans la tempête.'),
+    a11: f('Pris en enfilade par le Victory ; Villeneuve se rend au Conqueror. Naufragé dans la tempête.'),
+    a12: f(CADIX),
+    a13: f('La balle qui a tué Nelson est partie de sa hune d’artimon. Amène avec 487 tués sur 643 hommes ; coule le lendemain.'),
+    a14: f(CADIX), a15: f(CADIX),
+    a16: f('Rallie Cadix ; naufragé dans la tempête avec de lourdes pertes.'),
+    a17: f('Amène devant le Royal Sovereign vers 14 h 15 ; repris deux jours plus tard par la sortie de Cadix.'),
+    a18: f('Tire les premiers coups de la bataille. Enlevé à l’abordage par le Téméraire ; naufragé dans la tempête.'),
+    a19: f('Amène devant le Bellerophon ; naufragé dans la tempête.'),
+    a20: f('Rallie Cadix, puis mène la sortie qui reprend deux prises.'),
+    a21: f('Pris par le Tonnant ; son équipage le reprend dans la tempête et rallie Cadix.'),
+    a22: f('Amène devant le Colossus ; l’une des quatre prises à atteindre Gibraltar.'),
+    a23: f('Amène devant le Defiance ; naufragé dans la tempête.'),
+    a24: f('Ancien vaisseau britannique. Amène devant le Colossus ; atteint Gibraltar.'),
+    a25: f(CADIX), a26: f(CADIX),
+    a27: f('Amène devant le Belleisle ; sabordé après la tempête.'),
+    a28: f('Ancien vaisseau britannique. Amène devant l’Achille ; naufragé dans la tempête.'),
+    a29: f('Combat six vaisseaux ; amène devant le Dreadnought. Atteint Gibraltar.'),
+    a30: f('Amène devant le Defence ; atteint Gibraltar.'),
+    a31: f('Prend feu dans la hune de misaine et saute vers 17 h 45.'),
+    a32: f('Gravina, mortellement blessé, mène la retraite vers Cadix.'),
+    b33: f('Prend le Bucentaure en enfilade, puis s’accroche au Redoutable. 57 tués, 102 blessés ; Nelson touché vers 13 h 15.'),
+    b34: f('Combat le Redoutable d’un bord et le Fougueux de l’autre, et prend les deux.'),
+    b35: f('Prend le Bucentaure en enfilade, puis démâte la Santísima Trinidad.'),
+    b36: f('Prend le Bucentaure en enfilade, puis aborde et enlève le San Agustín.'),
+    b37: f('Abat les mâts du Bucentaure ; ses soldats de marine reçoivent la reddition de Villeneuve.'),
+    b38: f('Troisième vaisseau amiral de la flotte ; engagé au centre.'),
+    b39: f('L’ancien favori de Nelson ; combat la Santísima Trinidad et le Héros.'),
+    b40: f('Aide l’Orion à réduire l’Intrépide.'),
+    b41: f('Retient son feu jusqu’à bout portant ; prend l’Intrépide.'),
+    b42: f('Coupe la route de Dumanoir, puis prend le Neptuno.'),
+    b43: f('Prise d’Aboukir. Avec le Minotaur, coupe et prend le Neptuno.'),
+    b44: f('Premier à couper la ligne ; combat seul la Santa Ana pendant un quart d’heure. 47 tués, 94 blessés.'),
+    b45: f('Entièrement démâté par quatre adversaires, il garde son pavillon cloué sur une pique.'),
+    b46: f('Malmené par le Pluton et le Fougueux ; Duff est décapité par un boulet.'),
+    b47: f('Prise d’Aboukir. Enlève l’Algésiras à l’abordage.'),
+    b48: f('Aborde l’Aigle ; Cooke est abattu sur le gaillard d’arrière. Prend le Monarca.'),
+    b49: f('Prend le Swiftsure et le Bahama ; 40 tués, 160 blessés, la plus lourde perte britannique.'),
+    b50: f('Combat le Montañés et l’Argonauta ; prend le Berwick.'),
+    b51: f('Perce près de l’arrière-garde et se fait assaillir par le Príncipe de Asturias.'),
+    b52: f('Prend l’Aigle après un premier abordage repoussé.'),
+    b53: f('Prend le San Juan Nepomuceno en un quart d’heure.'),
+    b54: f('Combat l’Achille français.'),
+    b55: f('Engagé à l’arrière-garde.'),
+    b56: f('Combat le Príncipe de Asturias.'),
+    b57: f('Prend le San Ildefonso.'),
+    b58: f('Mauvais marcheur et dernier au feu ; ses bordées mettent le feu à l’Achille français.'),
+    africa: f('Défile sous le feu de toute l’avant-garde alliée, puis combat la Santísima Trinidad et l’Intrépide.')
+  };
+
+  L.nile.ships = {
+    f0: f('Pris en enfilade par cinq vaisseaux tour à tour et démâté en quelques minutes ; amène vers 21 heures. Brûlé comme irréparable.'),
+    f1: f('Vieux vaisseau à l’artillerie légère ; le premier à amener, après vingt minutes à peine.'),
+    f2: f('Combat le Vanguard et le Theseus ; amène vers 21 heures. Présent à Trafalgar sous le nom de HMS Spartiate.'),
+    f3: f('Pris en enfilade par le Minotaur ; amène vers 21 h 25.'),
+    f4: f('Câble coupé par un boulet ; dérive hors de la ligne et ouvre la brèche qu’utilise le Leander.'),
+    f5: f('Combat jusqu’à ce que les deux amiraux à bord soient blessés ; amène vers minuit. Devient HMS Canopus.'),
+    f6: f('Vaisseau amiral de l’expédition. Prend feu vers 21 heures et saute vers 22 heures, avec le trésor de la flotte.'),
+    f7: f('Dupetit-Thouars, les jambes emportées, refuse d’amener. Dérive au sud, démâté ; se rend le 3 août. Combat à Trafalgar sous le nom de HMS Tonnant.'),
+    f8: f('Coupe son câble pour s’écarter de l’Orient en feu et s’échoue ; amène le lendemain matin.'),
+    f9: f('Coupe son câble et s’échoue ; amène le lendemain matin.'),
+    f10: f('Vaisseau amiral de Villeneuve. S’échappe le 2 août ; pris au large de Malte en mars 1800.'),
+    f11: f('S’échappe ; capture le HMS Leander dix-huit jours plus tard. Pris par l’escadre de Nelson en février 1800.'),
+    f12: f('Trop sous le vent pour s’échapper ; jeté à la côte et brûlé par son équipage le 3 août.'),
+    ff0: f('Tire sur l’Orion à son passage et se fait couler sur les petits fonds d’une seule bordée.'),
+    ff1: f('Amène, puis est incendiée par son équipage et saute le 2 août.'),
+    diane: f('S’échappe avec Villeneuve le 2 août.'), justice: f('S’échappe avec Villeneuve le 2 août.'),
+    b17: f('Mène la flotte. Foley voit qu’il y a la place de passer à terre de la ligne française et s’y engage ; mouille par la hanche du Conquérant, côté terre.'),
+    b18: f('Mouille par l’avant du Guerrier et le démâte en douze minutes. Poursuit seul Villeneuve le lendemain, jusqu’à son rappel.'),
+    b19: f('Fait un large détour côté terre, coule la frégate la Sérieuse d’une bordée et mouille entre le Peuple Souverain et le Franklin.'),
+    b20: f('Coupe la ligne entre le Guerrier et le Conquérant et les prend tous deux en enfilade.'),
+    b21: f('Passe entre le Zealous et sa victime et mouille à terre du Spartiate.'),
+    b22: f('Premier à mouiller du côté du large, doublant l’avant-garde française. 30 tués, 76 blessés ; Nelson frappé au front vers 20 h 30.'),
+    b23: f('Mouille au large de l’Aquilon et couvre le Vanguard, durement pressé.'),
+    b24: f('Combat le Peuple Souverain du côté du large.'),
+    b25: f('S’arrête contre l’Orient, de 120 canons ; perd tous ses mâts et 197 hommes, et dérive hors du combat.'),
+    b26: f('Engage son bout-dehors dans le gréement de l’Heureux ; Westcott est tué d’une balle. 50 tués, 143 blessés.'),
+    b27: f('Arrive après la tombée de la nuit, coupe la ligne derrière l’Orient et le prend en enfilade côté terre.'),
+    b28: f('Mouille entre le Franklin et l’Orient. Hallowell fera faire pour Nelson un cercueil dans le grand mât de l’Orient.'),
+    culloden: f('Coupe au plus court sur le haut-fond de l’île et s’y plante, spectateur de toute la bataille. Son sort avertit l’Alexander et le Swiftsure.'),
+    mutine: f('Seul petit bâtiment de l’escadre ; reste auprès du Culloden échoué.'),
+    leander: f('S’arrête pour aider le Culloden, puis se glisse dans la brèche laissée par le Peuple Souverain et prend en enfilade le Franklin et l’Orient.')
+  };
+
+  var BRULE = ' Pris et brûlé.';
+  L.copenhagen.ships = {
+    d0: f('Ponton armé. Ancre sud de la ligne. Combat quatre heures contre le Polyphemus, l’Isis et la Désirée ; pris et brûlé.'),
+    d1: f('Ponton armé. Abandonné après trois heures ; pris et brûlé.'),
+    d2: f('Prame. Câble coupé par un boulet ; dérive sur les hauts-fonds en tirant toujours. Pris et brûlé.'),
+    d3: f('Prame. Appareille avec un seul mât debout et coule à l’entrée du port.'),
+    d4: f('Ponton armé. Engage l’Edgar dès le premier coup ; pris et brûlé.'),
+    d5: f('Batterie flottante.' + BRULE), d6: f('Frégate rasée.' + BRULE), d7: f('Batterie flottante.' + BRULE),
+    d8: f('Corvette. Bâtiment de signaux ; se retire dans le port, avarié.'),
+    d9: f('Ponton armé. Vaisseau amiral de Fischer. En feu dès la première heure ; dérive en flammes le long de la ligne et saute vers 16 h 30.'),
+    d10: f('Prame. Remorqué hors de la ligne, coulant bas ; sombre sur les hauts-fonds.'),
+    d11: f('Batterie flottante. Un radeau de pièces de 24 commandé par un garçon de dix-sept ans, embossé en face de l’Elephant. Nelson demandera à le rencontrer. Coupe ses amarres et se dégage.'),
+    d12: f('Vaisseau de ligne. Le plus fort de la ligne. Dérive sous Trekroner après avoir amené ; pris le lendemain et brûlé.'),
+    d13: f('Ancien navire des Indes.' + BRULE), d14: f('Batterie flottante.' + BRULE),
+    d15: f('Vaisseau de ligne. La seule prise conservée. Gagne l’Angleterre comme navire-hôpital et devient HMS Holstein.'),
+    d16: f('Ponton armé.' + BRULE),
+    d17: f('Frégate. À l’extrémité nord de la ligne ; se glisse dans le port.'),
+    trekroner: { name: 'Fort de Trekroner', fate: 'La batterie des Trois Couronnes, bâtie sur pilotis à l’entrée du port. Elle ne fut jamais réduite au silence ; ses canons ont tué le capitaine Riou.' },
+    bille0: { captain: 'Escadre du port de Steen Bille', fate: 'Ponton armé gardant l’entrée du port ; non engagé.' },
+    bille1: { captain: 'Escadre du port de Steen Bille', fate: 'Ponton armé gardant l’entrée du port ; non engagé.' },
+    b1: f('Mène la division et mouille en face du Jylland. 31 tués, 111 blessés.'),
+    b2: f('Combat les batteries flottantes et le Kronborg ; 30 tués.'),
+    b3: f('Bligh, celui du Bounty, armé uniquement de caronades, se tient juste derrière Nelson, contre le Dannebrog.'),
+    b4: f('Le plus faible des vaisseaux, opposé au Prøvesteenen. 33 tués, 88 blessés.'),
+    b5: f('L’ancien vaisseau de Nelson ne peut doubler le banc et s’échoue à son extrémité, sans tirer un coup.'),
+    b6: f('Envoyé à l’extrémité sud à la place de l’Agamemnon ; combat le Prøvesteenen et le Wagrien.'),
+    b7: f('Serre trop sur tribord et s’échoue sur le Middle Ground ; tire à longue portée. Thompson y perd une jambe.'),
+    b8: f('Suit le Bellona dans la fumée et s’échoue derrière lui.'),
+    b9: f('Vaisseau amiral de Nelson pour la journée, choisi pour son faible tirant d’eau. Mouillé contre le Dannebrog et la batterie flottante.'),
+    b10: f('Son maître est tué et son pilote blessé à l’entrée ; Fremantle le conduit lui-même à son poste, en face du Sjælland.'),
+    b11: f('Sous le feu du Holsteen, du Sjælland et de Trekroner à la fois. 56 tués, 164 blessés : la plus lourde perte de la flotte.'),
+    b12: f('En tête de ligne, au plus près de Trekroner. Graves répète le rappel de Parker mais garde battant le signal de combat rapproché.'),
+    b13: f('Mouille en travers de l’avant du Prøvesteenen et le prend en enfilade.'),
+    b14: f('Riou mène les frégates contre Trekroner à la place des vaisseaux échoués. Obéissant au rappel, il est coupé en deux au moment où l’Amazon s’éloigne.'),
+    b15: f('Escadre de frégates de Riou.'), b16: f('Escadre de frégates de Riou.'),
+    b17: f('Corvette ; escadre de frégates de Riou.'), b18: f('Corvette ; escadre de frégates de Riou.'),
+    pk0: f('Vaisseau amiral de Parker. Vers 13 h 15, il hisse le signal no 39 : cessez le combat.'),
+    pk1: f('Envoyé en avant par Parker pour soutenir Nelson ; arrive quand le feu s’éteint.'),
+    pk2: f('Envoyé en avant par Parker pour soutenir Nelson.'), pk3: f('Envoyé en avant par Parker pour soutenir Nelson.')
+  };
+
+  var CORPS = 'Corps principal. Défile à contre-bord le long de la ligne britannique et poursuit sa route au nord.';
+  var SOUS = 'Division sous le vent. Tente de percer là où les Britanniques virent de bord, est repoussée par les bordées du Victory et fait le tour pour rallier en fin de journée.';
+  var TETE = 'L’un des vaisseaux de tête auxquels Nelson barre la route.';
+  var DETACHE = 'Détaché avant la bataille ; arrive en fin d’après-midi et contribue à sauver la Santísima Trinidad.';
+  L.stvincent.ships = {
+    s0: f('Le seul quatre-ponts du monde. Écrasé par cinq vaisseaux, il aurait amené, mais se dégage en remorque.'),
+    s1: f(TETE),
+    s2: f('Abordé par Nelson depuis le pont du San Nicolás. Entre dans la Royal Navy ; Nelson y met son pavillon en 1801.'),
+    s3: f('Lofe sous le feu de l’Excellent et tombe sur le San Josef. Abordé et pris par Nelson.'),
+    s4: f('Amène devant l’Excellent, puis devant l’Orion, qui en prend possession.'),
+    s5: f('Amène devant l’Excellent vers 14 h 50 : la première prise de la journée.'),
+    s6: f(TETE),
+    s7: f(CORPS), s8: f(CORPS), s9: f(CORPS), s10: f(CORPS), s11: f(CORPS), s12: f(CORPS), s13: f(CORPS), s14: f(CORPS), s15: f(CORPS), s16: f(CORPS), s17: f(CORPS),
+    l18: f(SOUS), l19: f(SOUS), l20: f(SOUS), l21: f(SOUS), l22: f(SOUS), l23: f(SOUS), l24: f(SOUS),
+    p25: f(DETACHE), p26: f(DETACHE),
+    b0: f('Mène la ligne à travers la brèche, vire le premier et rejoint Nelson le premier. 10 tués, 47 blessés.'),
+    b1: f('Passe entre le Captain et l’ennemi pour lui donner un répit, puis combat la Santísima Trinidad. 12 tués, 49 blessés.'),
+    b2: f('Déverse ses bordées sur le San Josef pendant que Nelson aborde le San Nicolás.'),
+    b3: f('Prend possession du Salvador del Mundo, puis combat la Santísima Trinidad.'),
+    b4: f('Perd sa vergue de misaine et sa vergue de petit hunier au point de virement et tombe hors de la ligne.'),
+    b5: f('Combat la Santísima Trinidad. Nelson y transporte son guidon le soir même.'),
+    b6: f('Vaisseau amiral de Jervis. Sa bordée d’enfilade repousse la division espagnole sous le vent. 1 tué, 5 blessés.'),
+    b7: f('Au centre de la ligne ; aucune perte.'), b8: f('Au centre de la ligne.'), b9: f('Au centre de la ligne.'),
+    b10: f('Thompson ne donne pas suite au signal qui aurait envoyé la division d’arrière couper la route aux Espagnols.'),
+    b11: f('À l’arrière de la ligne.'),
+    b12: f('Quitte la ligne sans ordre et combat sept vaisseaux. Roue et petit mât de hune emportés ; 24 tués, 56 blessés, le tiers des pertes de la flotte.'),
+    b13: f('Matelot d’arrière du Captain ; garde son poste dans la ligne.'),
+    b14: f('Sorti de la ligne sur ordre pour soutenir Nelson. Fait amener deux vaisseaux, pousse le San Nicolás sur le San Josef et continue vers la Santísima Trinidad. 11 tués, 12 blessés.')
+  };
+
+  L.caira.ships = {
+    caira: f('Perd ses mâts de hune dans un abordage. 110 tués et blessés le 13 ; pris le lendemain avec 400 autres hommes hors de combat.'),
+    vestale: f('Prend en remorque le vaisseau désemparé.'),
+    sansculotte: f('Vaisseau amiral de la flotte de Toulon. Laisse porter pour couvrir le Ça Ira, ce qui met fin au combat de la journée.'),
+    jeanbart: f('Laisse porter avec le vaisseau amiral pour couvrir le Ça Ira.'),
+    fr0: f('Poursuit sa route avec la flotte française.'), fr1: f('Poursuit sa route avec la flotte française.'),
+    fr2: f('Prend le Ça Ira en remorque dans la nuit et est capturé avec lui le 14.'),
+    inconstant: f('Premier à attaquer. Tire deux fois dans la hanche du gros vaisseau avant que sa batterie basse ne chasse la frégate.'),
+    agamemnon: f('Le meilleur marcheur de la flotte, et seul. Sept blessés. Nelson n’est pas encore officier général : il ne porte pas de pavillon.'),
+    br0: f('Arrive en chasse ; non engagé le 13.'), br1: f('Arrive en chasse ; non engagé le 13.'),
+    br2: f('Vaisseau amiral de Hotham, à plusieurs milles en arrière. Fait le signal de rappel à 13 h 15.')
+  };
+
+  var BAT = 'Batterie côtière.', CANOTS = 'Au mouillage ; envoie ses canots.', RESSAC = 'Débarque dans le ressac au sud de la ville.';
+  var MIL = { name: 'Troupes et milices espagnoles', fate: 'Réguliers du bataillon des Canaries, milices de l’île et marins français : plusieurs milliers d’hommes sous les armes au matin.' };
+  L.tenerife.ships = {
+    bat0: { name: 'Fort de Paso Alto', fate: BAT }, bat1: { name: 'Batterie San Pedro', fate: BAT },
+    bat2: { name: 'Castillo de San Cristóbal', fate: 'La citadelle au pied du môle, quartier général de Gutiérrez. Sa mitraille a balayé le môle.' },
+    bat3: { name: 'Batterie de La Concepción', fate: BAT }, bat4: { name: 'Batterie San Telmo', fate: BAT }, bat5: { name: 'Fort San Juan', fate: BAT },
+    mil0: MIL, mil1: MIL, mil2: MIL,
+    sq0: f('Nelson remonte à son bord d’une seule main et se fait couper le bras dans son poste des blessés moins d’une demi-heure plus tard.'),
+    sq1: f(CANOTS), sq2: f(CANOTS), sq3: f(CANOTS),
+    sq4: f('Le plus proche de la côte. Nelson refuse d’y être porté : la femme de Fremantle est à bord et Fremantle est encore à terre.'),
+    sq5: f(CANOTS), sq6: f(CANOTS),
+    fox: f('Cotre portant 180 hommes. Touché à la flottaison, il coule aussitôt ; 97 morts.'),
+    'b-nelson': { name: 'Le canot de Nelson', fate: 'Nelson est touché en mettant pied à terre. Son beau-fils lui bande le bras et ramène le canot sous le feu des batteries, en s’arrêtant pour recueillir des hommes du Fox.' },
+    'b-fremantle': { name: 'Le canot de Fremantle', fate: 'Atteint le môle. Fremantle a le bras traversé d’une balle.' },
+    'b-bowen': { name: 'Le canot de Bowen', fate: 'Enlève la batterie du môle et encloue ses canons. Bowen et son premier lieutenant sont tués par la mitraille.' },
+    'b-thompson': { name: 'Le canot de Thompson', fate: 'Atteint le môle.' },
+    'b-troubridge': { name: 'Les canots de Troubridge', fate: 'Manquent le môle dans l’obscurité et se brisent sur les rochers au sud de la citadelle.' },
+    'b-hood': { name: 'Les canots de Hood et de Miller', fate: 'Débarquent dans le ressac plus au sud ; échelles perdues, poudre noyée.' },
+    'b-waller': { name: 'Les canots de Waller', fate: RESSAC },
+    'b-oldfield': { name: 'Les soldats de marine d’Oldfield', fate: RESSAC },
+    party: { name: 'Le détachement de Troubridge', captain: 'Environ 340 marins et soldats de marine', fate: 'Se bat de rue en rue jusqu’à la place, puis tient le couvent de Santo Domingo jusqu’à l’accord conclu vers 7 heures.' }
+  };
+
+  L.chase.ships = {
+    villeneuve: { name: 'La flotte combinée', captain: '11 vaisseaux partis de Toulon ; 20 avec les Espagnols de Gravina et les renforts', fate: 'De Toulon à la Martinique et retour en quatre mois et demi, pour finir là où Nelson la trouvera : à Cadix.' },
+    nelson: { captain: '11 vaisseaux devant Toulon ; 10 à travers l’Atlantique', fate: 'Environ sept mille milles aller et retour. Il n’a jamais aperçu l’ennemi, et les Antilles sont sauvées.' },
+    curieux: f('Renvoyé en Angleterre avec les dépêches de Nelson, il aperçoit la flotte combinée le 19 juin et porte sa route à Londres. La nouvelle atteint l’Amirauté le 9 juillet.'),
+    calder: { captain: '15 vaisseaux de ligne', fate: 'Rencontre Villeneuve dans la brume au large du Finisterre le 22 juillet et prend deux vaisseaux espagnols. Traduit en conseil de guerre et réprimandé pour ne pas avoir repris le combat.' }
+  };
+})();

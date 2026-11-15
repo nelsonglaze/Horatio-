@@ -14,7 +14,7 @@
   var SLOW = 0.7;   /* below this speed (map units per time unit) a ship is drifting, not sailing */
 
   /* Every word the engine shows. A page may set window.NelsonBattleUI to
-     override any of them (the French pages do). */
+     override any of them, for a translated page. */
   var UI_EN = {
     play: 'Play', pause: 'Pause', replay: 'Replay', restart: 'Restart', speed: 'Speed ', names: ' Ship names', wakes: ' Wakes',
     struck: 'Struck her colours', flagship: 'Flagship', aground: 'Aground', hint: 'Click a ship for her name, guns and captain.',
@@ -537,9 +537,11 @@
     (loc.phases || []).forEach(function (p, i) { if (sc.phases[i]) { sc.phases[i].title = p[0]; sc.phases[i].text = p[1]; } });
     if (loc.ships) sc.ships.forEach(function (sh) {
       var o = loc.ships[sh.id];
-      if (!o) return;
+      if (!o) { sh.fate = ''; return; }
       if (o.name) sh.name = o.name;
       if (o.fate) sh.fate = o.fate;
+      if (o.captain) sh.captain = o.captain;
+      if (o.flag) sh.flag = o.flag;
     });
   }
 
