@@ -37,7 +37,7 @@ then go to <http://localhost:8000>. To publish it, turn on GitHub Pages for this
 
 `assets/js/battle.js` is a small engine with no dependencies. Each plan has its own scenario file (`trafalgar.js`, `nile.js`, `copenhagen.js`, `st-vincent.js`, `ca-ira.js`, `tenerife.js`, `chase.js`) that lists the ships, their tracks as timed way-points, and the phases of the action. To change a plan, edit the scenario file; to add a battle, copy one and call `NelsonBattle.mount('plan', {...})` from a page that contains `<div id="plan"></div>`.
 
-Styles are in `assets/css/style.css`. Colours and typefaces are set as variables at the top of that file. The ship, sea serpent, whale and title frame are the `orn-*.svg` files in `assets/img`.
+Styles are in `assets/css/style.css`. Colours and typefaces are set as variables at the top of that file. The ship, whale and title frame are the `orn-*.svg` files in `assets/img`.
 
 ## Shelved work
 

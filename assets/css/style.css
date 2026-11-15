@@ -119,13 +119,12 @@ main { padding-block: 0 5rem; overflow-x: clip; }
   border: 30px solid transparent; border-image: url("../img/orn-frame.svg") 50 / 30px stretch;
   padding: .7rem 1.4rem 1.3rem; background: rgba(244, 235, 211, .55); background-clip: padding-box;
 }
-/* a ship, serpent or whale in the open water beside the cartouche */
+/* a ship or whale in the open water beside the cartouche */
 .page-head::after {
   content: ""; position: absolute; left: calc(100% + 30px + 2rem); top: 50%; transform: translateY(-50%);
   width: 16rem; aspect-ratio: 32 / 25; background: center / contain no-repeat; opacity: .62; pointer-events: none; display: none;
 }
 .page-head.orn-ship::after { background-image: url("../img/orn-ship.svg"); }
-.page-head.orn-serpent::after { background-image: url("../img/orn-serpent.svg"); aspect-ratio: 400 / 160; width: 17rem; }
 .page-head.orn-whale::after { background-image: url("../img/orn-whale.svg"); aspect-ratio: 300 / 145; width: 15.5rem; }
 @media (min-width: 1200px) { .page-head::after { display: block; } }
 @media (max-width: 640px) { .page-head { border-width: 20px; border-image-width: 20px; padding: .4rem .7rem .9rem; margin-block: 1.4rem 1.8rem; } }
@@ -195,11 +194,7 @@ figure { margin: 0; }
   content: ""; position: absolute; inset: -20% -10% -20% 35%;
   background: url("../img/rhumb.svg") center / contain no-repeat; opacity: .5; pointer-events: none;
 }
-.hero::after {
-  content: ""; position: absolute; left: 39%; bottom: .7rem; width: 15rem; aspect-ratio: 400 / 160; background: url("../img/orn-serpent.svg") center / contain no-repeat;
-  opacity: .55; pointer-events: none; display: none;
-}
-@media (min-width: 1100px) { .hero::after { display: block; } }
+
 .hero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 2rem 3.5rem; align-items: center; padding-block: 3.4rem 3.6rem; }
 .hero h1 { font-family: var(--font-display); font-size: var(--step-5); line-height: .9; letter-spacing: .02em; }
 .hero h1 span { display: block; }
