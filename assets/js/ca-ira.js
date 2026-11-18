@@ -69,7 +69,7 @@
       { t: 12, title: 'Inconstant strikes first', text: 'Captain Fremantle takes a 36-gun frigate under the big ship’s quarter, fires, tacks and fires again, until her lower-deck guns drive him off. The frigate Vestale passes Ça Ira a tow.' },
       { t: 36, title: 'Agamemnon comes up', text: 'Nelson’s 64 has outsailed the rest of the fleet. He means not to fire until he touches her stern, but her stern-chasers are cutting up his rigging, so he opens at a hundred yards.' },
       { t: 44, title: 'Yaw, fire, follow', text: 'Agamemnon puts her helm over until her whole broadside bears on the Frenchman’s stern, fires, then swings back into her wake and closes up again. Ça Ira cannot bring a single broadside gun to bear.' },
-      { t: 68, title: 'Two and a half hours', text: 'The drill goes on without a break. Ça Ira, by Nelson’s account “a perfect wreck”, has 110 men killed and wounded. Agamemnon has seven wounded.' },
+      { t: 68, title: 'Over two hours', text: 'The drill goes on without a break. Ça Ira, by Nelson’s account “a perfect wreck”, has 110 men killed and wounded. Agamemnon has seven wounded.' },
       { t: 86, title: 'Recalled', text: 'At 1.15 pm the 120-gun Sans-Culotte and the Jean-Bart bear down to cover their consort, and Hotham signals Agamemnon to rejoin. Next morning Ça Ira and Censeur, towing her, are cut off and taken.' }
     ]
   });
