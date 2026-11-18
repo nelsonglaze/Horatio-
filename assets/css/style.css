@@ -557,3 +557,17 @@ td .tag, .tag {
   .bm-controls, .nav, .skip { display: none; }
   body { background: #fff; }
 }
+
+/* home portrait: before/after slider between the young captain and the admiral */
+.ba { position: relative; aspect-ratio: 900 / 1085; overflow: hidden; margin: 6px; border: 1px solid var(--ink);
+  border-radius: 50% 50% 4px 4px / 34% 34% 4px 4px; box-shadow: 0 0 0 5px var(--paper-light), 0 0 0 6px var(--rule), 0 14px 30px -18px rgba(26,39,55,.55); }
+.hero-portrait .ba img { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: 50% 15%;
+  border: 0; border-radius: 0; box-shadow: none; filter: sepia(.12) saturate(.94); }
+.ba .ba-top { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--paper-light); box-shadow: 0 0 0 1px rgba(26,39,55,.45); pointer-events: none; }
+.ba-line::after { content: "\2194"; position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); width: 2.2rem; height: 2.2rem; border-radius: 50%;
+  background: var(--paper-light); border: 1px solid var(--ink); color: var(--ink); display: grid; place-items: center; font-size: 1.1rem; }
+.ba-tag { position: absolute; bottom: .6rem; font-family: var(--font-display); letter-spacing: .1em; font-size: .85rem; color: #fff; background: rgba(26,39,55,.7); padding: .15rem .45rem; pointer-events: none; }
+.ba-l { left: .6rem; } .ba-r { right: .6rem; }
+.ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.ba-range:focus-visible + * , .ba:focus-within .ba-line::after { outline: 2px solid var(--wax); outline-offset: 2px; }

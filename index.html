@@ -53,9 +53,22 @@
       </div>
     </div>
     <figure class="plate hero-portrait">
-      <img src="assets/img/nelson-abbott.jpg" alt="Portrait of Nelson in rear-admiral's full dress, the empty right sleeve pinned across his chest, wearing the star of the Bath and the diamond plume given him by the Sultan." width="900" height="1085">
-      <figcaption><b>Rear-Admiral Sir Horatio Nelson</b>, Lemuel Francis Abbott, 1799. The hat carries the Sultan's diamond <em>chelengk</em>, awarded for the Nile.</figcaption>
+      <div class="ba" style="--pos:50%">
+        <img src="assets/img/nelson-abbott.jpg" alt="Nelson at forty, a rear-admiral: grey hair, the empty right sleeve pinned across his chest, the star of the Bath and the Sultan's diamond plume in his hat." width="900" height="1085">
+        <img class="ba-top" src="assets/img/nelson-young-aligned.jpg" alt="Nelson at eighteen to twenty-two, a young captain in full-dress uniform, hand on his sword, a fort and river behind him." width="900" height="1085">
+        <span class="ba-line" aria-hidden="true"></span>
+        <span class="ba-tag ba-l" aria-hidden="true">1781</span><span class="ba-tag ba-r" aria-hidden="true">1799</span>
+        <input class="ba-range" id="ba-range" type="range" min="0" max="100" value="50" aria-label="Slide between the young captain of 1781 and the admiral of 1799">
+      </div>
+      <figcaption><b>Drag to compare.</b> Left: <b>Captain Horatio Nelson</b>, John Francis Rigaud, 1781. Right: <b>Rear-Admiral Sir Horatio Nelson</b>, Lemuel Francis Abbott, 1799, with the Sultan's diamond <em>chelengk</em> awarded for the Nile. Eighteen years, an eye and an arm apart.</figcaption>
     </figure>
+    <script>
+      (function () {
+        var r = document.getElementById('ba-range'), box = r.parentNode;
+        function set() { box.style.setProperty('--pos', r.value + '%'); }
+        r.addEventListener('input', set); set();
+      })();
+    </script>
   </div>
 </section>
 
