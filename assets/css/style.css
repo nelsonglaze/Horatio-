@@ -571,3 +571,6 @@ td .tag, .tag {
 .ba-l { left: .6rem; } .ba-r { right: .6rem; }
 .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
 .ba-range:focus-visible + * , .ba:focus-within .ba-line::after { outline: 2px solid var(--wax); outline-offset: 2px; }
+
+.ai-note { max-width: var(--sheet); margin: 0 auto; padding: 0 var(--gutter) 1.2rem; font-size: .8rem; color: var(--ink-soft); }
+.ai-note a { color: var(--ink-soft); }
